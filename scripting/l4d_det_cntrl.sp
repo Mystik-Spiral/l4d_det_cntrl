@@ -10,7 +10,7 @@
 *	normally.  This is very helpful if you have plugins that allow bots to
 *	throw molotovs.  If a bot/player/griefer makes a bad molotov throw or
 *	shoots a gascan that would burn self/incapped/other survivor in the
-*	defind proximity, this plugin will prevent detonation.
+*	defined proximity, this plugin will prevent detonation.
 *
 *	For gascans: Shooting the gascan when it is too close will not cause a
 *	fire, though you will see shot decals on the undetonated gascan.
@@ -49,12 +49,21 @@
 *	https://forums.alliedmods.net/showthread.php?p=2684862
 *
 *
+*	Github:
+*
 *	Want to contribute code enhancements?
 *	Create a pull request using this GitHub repository:
 *	https://github.com/Mystik-Spiral/l4d_det_cntrl
 *
 *
-*	Thanks:
+*
+*	Discussion:
+*
+*	Discuss this plugin at AlliedModders - Detonation Control
+*	https://forums.alliedmods.net/showthread.php?t=344220
+*
+*
+*	Credits:
 *
 *	Silvers (SilverShot): Game type/mode detection/enable/disable template,
 *	left4dhooks plugin, examples, fixes, and general community help.
@@ -67,7 +76,7 @@
 #define PLUGIN_AUTHOR           "Mystik Spiral"
 #define PLUGIN_DESCRIPTION      "Prevent gascan/molotov detonation in defined proximity"
 #define PLUGIN_VERSION          "1.0"
-#define PLUGIN_URL              "https://forums.alliedmods.net/showthread.php?t=xxxxxx"
+#define PLUGIN_URL              "https://forums.alliedmods.net/showthread.php?t=344220"
 
 // ====================================================================================================
 // Plugin Info
