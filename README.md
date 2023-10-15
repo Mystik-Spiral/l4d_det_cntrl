@@ -42,7 +42,7 @@ proximity check is skipped.
 [Left 4 DHooks Direct](https://forums.alliedmods.net/showthread.php?p=2684862) (left4dhooks.smx) **`v1.138`** or higher
 
 ### Discussion:
-Discuss this plugin at [AlliedModders - Detonation Control](https://forums.alliedmods.net/showthread.php?t=???)
+Discuss this plugin at [AlliedModders - Detonation Control](https://forums.alliedmods.net/showthread.php?t=2811636)
 
 #### Thanks:  
 Silvers (SilverShot): Game type/mode detection/enable/disable template,
