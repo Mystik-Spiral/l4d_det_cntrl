@@ -1,7 +1,9 @@
+---
 > ### `Detonation Control` <sub>(l4d_det_cntrl) by</sub> ***Mystik Spiral***
 >
-> Control gascan/molotov detonation based on customizable proximity
-# 
+> #### Control gascan/molotov detonation based on customizable proximity
+---
+
 #### Features:  
 If a gascan or molotov detonation location is within a defined proximity
 of self/incapped/other survivor, prevent detonation, otherwise treat
@@ -18,32 +20,30 @@ For molotovs: Once a thrown molotov hits the ground, if it is too close,
 the molotov will skip across the ground like it does when hitting a wall.
 The undetonated molotov can be picked back up and thrown again.  
 Throw the molotov out of proximity and it will behave normally.
-# 
+
 #### Options:  
-Separate proximity values for gascan and molotov
-Separate proximity values for vertical and vector distance
-Separate proximity values for self, incapped, and other
-Separately enable/disable gascan and molotov protection
-Separately display/surpress gascan and molotov chat messages
-Language translations: English, French, Spanish, Russian, Chinese
-# 
+- Separate proximity values for gascan and molotov
+- Separate proximity values for vertical and vector distance
+- Separate proximity values for self, incapped, and other
+- Separately enable/disable gascan and molotov protection
+- Separately display/surpress gascan and molotov chat messages
+- Language translations: English, French, Spanish, Russian, Chinese
+
 #### Notes:  
 Vertical proximity is checked first.  If no survivor is in vertical
 proximity, then detonation will happen as normal and the vector
 proximity check is skipped.
 
-Vertical refers to the distance in height only (above/below).
-Vector refers to the distance in three-dimensional space.
-Distance is measured to the survivors eye position.
-# 
+- Vertical refers to the distance in height only (above/below).
+- Vector refers to the distance in three-dimensional space.
+- Distance is measured to the survivors eye position.
+
 #### Requirements:  
-Left 4 DHooks Direct (left4dhooks.smx) v1.138 [25-Sep-2023] or higher
-https://forums.alliedmods.net/showthread.php?p=2684862
-# 
-#### Want to contribute code enhancements?  
-Create a pull request using this GitHub repository:
-https://github.com/Mystik-Spiral/l4d_det_cntrl
-# 
+[Left 4 DHooks Direct](https://forums.alliedmods.net/showthread.php?p=2684862) (left4dhooks.smx) **`v1.138`** or higher
+
+### Discussion:
+Discuss this plugin at [AlliedModders - Detonation Control](https://forums.alliedmods.net/showthread.php?t=???)
+
 #### Thanks:  
 Silvers (SilverShot): Game type/mode detection/enable/disable template,
 left4dhooks plugin, examples, fixes, and general community help.
