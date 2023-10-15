@@ -10,7 +10,7 @@ of self/incapped/other survivor, prevent detonation, otherwise treat
 normally.  This is very helpful if you have plugins that allow bots to
 throw molotovs.  If a bot/player/griefer makes a bad molotov throw or
 shoots a gascan that would burn self/incapped/other survivor in the
-defind proximity, this plugin will prevent detonation.
+defined proximity, this plugin will prevent detonation.
 
 For gascans: Shooting the gascan when it is too close will not cause a
 fire, though you will see shot decals on the undetonated gascan.  
