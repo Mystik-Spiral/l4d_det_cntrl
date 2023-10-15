@@ -1,0 +1,20 @@
+"Phrases"
+{
+	"GascanMsg"
+	{
+		"en" 	"Move gascan further away from survivors to allow detonation."
+		"fr"	"Éloignez le bidon d'essence plus loin des survivants pour permettre la détonation."
+		"es"	"Aleje el lata de gasolina más de los supervivientes para permitir la detonación."
+		"ru"	"Отодвинуть газовый баллон дальше баллончик подальше от выживших, чтобы позволять детонацию."
+		"zho" 	"将气体罐移至距离幸存者更远的地方以允许爆炸。"
+	}
+
+	"MolotovMsg"
+	{
+		"en" 	"Throw molotov further away from survivors to allow detonation."
+		"fr"	"Jetez le molotov plus loin des survivants pour permettre la détonation."
+		"es"	"Lanza molotov más lejos de los supervivientes para permitir la detonación."
+		"ru"	"Бросьте mолотова дальше подальше от выживших, чтобы позволять детонацию."
+		"zho" 	"将燃烧瓶扔到离幸存者更远的地方以便爆炸。"
+	}
+}
