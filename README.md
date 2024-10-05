@@ -44,7 +44,7 @@ proximity check is skipped.
 ### Discussion:
 Discuss this plugin at [AlliedModders - Detonation Control](https://forums.alliedmods.net/showthread.php?t=2811636)
 
-#### Thanks:  
+#### Acknowledgements:  
 - Silvers (SilverShot): Game type/mode detection/enable/disable template,
 left4dhooks plugin, examples, fixes, and general community help.
 - Do not attempt to display chat message if attacker is world (client 0). [reported by yezi]
