@@ -12,14 +12,14 @@
 *	shoots a gascan that would burn self/incapped/other survivor in the
 *	defined proximity, this plugin will prevent detonation.
 *
-*	For gascans: Shooting the gascan when it is too close will not cause a
-*	fire, though you will see shot decals on the undetonated gascan.
-*	Move the gascan out of proximity and it will behave normally.
+*	For gascans: Shooting the gascan when it is too close will cause the
+*	gascan to remain undetonated, though you will see shot decals on the
+*	gascan. Move the gascan out of proximity and it will behave normally.
 *
 *	For molotovs: Once a thrown molotov hits the ground, if it is too close,
 *	the molotov will skip across the ground like it does when hitting a wall.
-*	The undetonated molotov can be picked back up and thrown again.
-*	Throw the molotov out of proximity and it will behave normally.
+*	The undetonated molotov can be picked up and thrown again. Throw the
+*	molotov out of proximity and it will behave normally.
 *
 *
 *	Options:
@@ -40,7 +40,7 @@
 *
 *	Vertical refers to the distance in height only (above/below).
 *	Vector refers to the distance in three-dimensional space.
-*	Distance is measured to the survivors eye position.
+*	Distance is measured from the detonation location to the survivors eye position.
 *
 *
 *	Requirements:
@@ -49,24 +49,19 @@
 *	https://forums.alliedmods.net/showthread.php?p=2684862
 *
 *
-*	Github:
-*
-*	Want to contribute code enhancements?
-*	Create a pull request using this GitHub repository:
+*	Code:
 *	https://github.com/Mystik-Spiral/l4d_det_cntrl
 *
-*
-*
 *	Discussion:
-*
-*	Discuss this plugin at AlliedModders - Detonation Control
 *	https://forums.alliedmods.net/showthread.php?t=344220
 *
 *
-*	Credits:
+*	Acknowledgements:
 *
 *	Silvers (SilverShot): Game type/mode detection/enable/disable template,
 *	left4dhooks plugin, examples, fixes, and general community help.
+*
+*	Do not attempt to display chat message if attacker is world (client 0) - reported by yezi.
 */
 
 // ====================================================================================================
@@ -74,8 +69,8 @@
 // ====================================================================================================
 #define PLUGIN_NAME             "[L4D & L4D2] Detonation Control"
 #define PLUGIN_AUTHOR           "Mystik Spiral"
-#define PLUGIN_DESCRIPTION      "Prevent gascan/molotov detonation in defined proximity"
-#define PLUGIN_VERSION          "1.0"
+#define PLUGIN_DESCRIPTION      "Prevent gascan/molotov detonation based on survivor proximity"
+#define PLUGIN_VERSION          "1.0.1"
 #define PLUGIN_URL              "https://forums.alliedmods.net/showthread.php?t=344220"
 
 // ====================================================================================================
@@ -473,7 +468,7 @@ public Action L4D2_CGasCan_EventKilled(int gascan, int &inflictor, int &attacker
 	{
 		if (g_bCvarGascanEnable && GasMolDetTooClose(gascan, g_fCvarGasVertSelfProx, g_fCvarGasVertIncapProx, g_fCvarGasVertOtherProx, g_fCvarGasVecSelfProx, g_fCvarGasVecIncapProx, g_fCvarGasVecOtherProx, attacker))
 		{
-			if (g_bCvarGascanChat && !g_bGascanChatSpam[attacker])
+			if (g_bCvarGascanChat && !g_bGascanChatSpam[attacker] && attacker > 0 && !IsFakeClient(attacker))
 			{
 				CPrintToChat(attacker, "{orange}[DetCtl]{lightgreen} %t", "GascanMsg");
 				g_bGascanChatSpam[attacker] = true;
@@ -493,7 +488,7 @@ public Action L4D_Molotov_Detonate(int molotov, int client)
 	//if so, prevent detonation, otherwise treat normally
 	if (g_bCvarMolotovEnable && GasMolDetTooClose(molotov, g_fCvarMolVertSelfProx, g_fCvarMolVertIncapProx, g_fCvarMolVertOtherProx, g_fCvarMolVecSelfProx, g_fCvarMolVecIncapProx, g_fCvarMolVecOtherProx, client))
 	{
-		if (g_bCvarMolotovChat && !g_bMolotovChatSpam[client])
+		if (g_bCvarMolotovChat && !g_bMolotovChatSpam[client] && client > 0 && client <= MaxClients && !IsFakeClient(client))
 		{
 			CPrintToChat(client, "{orange}[DetCtl]{lightgreen} %t", "MolotovMsg");
 			g_bMolotovChatSpam[client] = true;
