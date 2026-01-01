@@ -62,6 +62,7 @@
 *	left4dhooks plugin, examples, fixes, and general community help.
 *
 *	Do not attempt to display chat message if attacker is world (client 0) - reported by yezi.
+*   On detonation, move bot check after client world check to avoid out-of-bounds error - reported by deprid.
 */
 
 // ====================================================================================================
@@ -70,7 +71,7 @@
 #define PLUGIN_NAME             "[L4D & L4D2] Detonation Control"
 #define PLUGIN_AUTHOR           "Mystik Spiral"
 #define PLUGIN_DESCRIPTION      "Prevent gascan/molotov detonation based on survivor proximity"
-#define PLUGIN_VERSION          "1.0.1"
+#define PLUGIN_VERSION          "1.0.2"
 #define PLUGIN_URL              "https://forums.alliedmods.net/showthread.php?t=344220"
 
 // ====================================================================================================
@@ -488,7 +489,7 @@ public Action L4D_Molotov_Detonate(int molotov, int client)
 	//if so, prevent detonation, otherwise treat normally
 	if (g_bCvarMolotovEnable && GasMolDetTooClose(molotov, g_fCvarMolVertSelfProx, g_fCvarMolVertIncapProx, g_fCvarMolVertOtherProx, g_fCvarMolVecSelfProx, g_fCvarMolVecIncapProx, g_fCvarMolVecOtherProx, client))
 	{
-		if (g_bCvarMolotovChat && !g_bMolotovChatSpam[client] && client > 0 && client <= MaxClients && !IsFakeClient(client))
+		if (g_bCvarMolotovChat && client > 0 && client <= MaxClients && !g_bMolotovChatSpam[client] && !IsFakeClient(client))
 		{
 			CPrintToChat(client, "{orange}[DetCtl]{lightgreen} %t", "MolotovMsg");
 			g_bMolotovChatSpam[client] = true;
