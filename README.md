@@ -48,3 +48,4 @@ Discuss this plugin at [AlliedModders - Detonation Control](https://forums.allie
 - Silvers (SilverShot): Game type/mode detection/enable/disable template,
 left4dhooks plugin, examples, fixes, and general community help.
 - Do not attempt to display chat message if attacker is world (client 0). [reported by yezi]
+- On detonation, move bot check after world (client 0) check to avoid out-of-bounds error. [reported by deprid]
